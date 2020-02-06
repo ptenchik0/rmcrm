@@ -11,7 +11,6 @@ const routes = [
 		path: '/',
 		name: 'home',
 		component: Home,
-		props: { show: false },
 	},
 /*  {
     path: 'app/rmcrm/about',

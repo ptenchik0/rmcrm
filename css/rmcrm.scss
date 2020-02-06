@@ -1,0 +1,84 @@
+.app-sidebar-tabs__content > section{
+	position: relative;
+	padding-bottom: 61px!important;
+
+	.mx-datepicker{
+		width: 100%!important;
+	}
+
+	.footer{
+		text-align: center;
+		width: 100%;
+		position: fixed;
+		bottom: 0;
+		margin: 0 -10px;
+		padding: 5px 10px;
+		border-top: 1px solid var(--color-border);
+		background-color: var(--color-main-background);
+	}
+
+	fieldset{
+		position: relative;
+		margin: 10px 0 15px 0;
+		padding: 20px 10px 10px 10px;
+		border: 1px solid var(--color-border);
+		-webkit-border-radius: var(--border-radius);
+		-moz-border-radius: var(--border-radius);
+		border-radius: var(--border-radius);
+		legend{
+			color: var(--color-text-maxcontrast);
+			position: absolute;
+			top: -15px;
+			left: 5px;
+			padding: 5px 10px;
+			background-color: var(--color-main-background);
+		}
+	}
+
+	textarea{
+		width: 100%;
+	}
+
+}
+
+.form-group{
+	display: block;
+	margin: 0 0 5px 0;
+	padding: 5px 0;
+	input{
+		width: 100%;
+		margin: 0;
+	}
+}
+
+.btn{
+	&-green{
+		color: #fff;
+		background-color: #4cbb17;
+		&:disabled{
+			color: rgba(255,255,255,.5);
+		}
+	}
+}
+
+/**
+* SVG COLOR API
+*
+* @param string $icon the icon filename
+* @param string $dir the icon folder within /core/img if $core or app name
+* @param string $color the desired color in hexadecimal
+* @param int $version the version of the file
+* @param bool [$core] search icon in core
+*
+* @returns string the url to the svg api endpoint
+*/
+
+.icon-rm {
+	//@include icon-color('menu', 'actions', '#ed00d6', 1, true);
+	@include icon-color('icon-add', 'rmcrm', '#ed00d6', 1, false);
+	// --icon-menu: url('/svg/core/actions/menu/ffffff?v=1');
+	// background-image: var(--icon-menu)
+}
+
+@include icon-black-white('icon-add', 'rmcrm', 1);
+
