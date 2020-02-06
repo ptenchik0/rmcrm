@@ -2,22 +2,24 @@
 
 ## Project setup
 ```
-npm install
+make all
 ```
 
 ### Compiles and hot-reloads for development
 ```
-npm run serve
+make build-js
+make watch-js
 ```
 
 ### Compiles and minifies for production
 ```
-npm run build
+make build-js
 ```
 
 ### Lints and fixes files
 ```
-npm run lint
+make lint
+make lint-fix
 ```
 
 ### Customize configuration
