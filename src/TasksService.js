@@ -9,6 +9,9 @@ export default {
 		url = `/apps/notes${url}`
 		return OC.generateUrl(url)
 	},
+  sdddd(){
+
+  },
 
 	fetchNotes() {
 		return function() {
