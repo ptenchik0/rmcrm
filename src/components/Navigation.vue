@@ -46,7 +46,7 @@
 			<AppNavigationCaption title="sssssssssssss" />
 		</ul>
 		<AppNavigationSettings>
-			dsfas
+			settings section
 		</AppNavigationSettings>
 	</AppNavigation>
 </template>
