@@ -3,7 +3,7 @@
 		<table id="taskstable" class="table table-striped">
 			<thead class="thead-dark">
 				<tr>
-					<th style="width: 5%">
+					<th style="width: 5%; text-align: center">
 						ID
 					</th>
 					<th colspan="4">
@@ -12,6 +12,13 @@
 				</tr>
 			</thead>
 			<tbody>
+      <tr v-for="task in tasks" :key="task.id">
+        <td style="text-align: right">{{task.id + 100}} <span :class="!task.completed ? task.status : 'completed'">{{task.status}}</span></td>
+        <td>{{task.completed}} {{task.title}}</td>
+        <td></td>
+        <td></td>
+        <td>{{task.completed ? 'cd '+ task.createDate : 'ud '+ task.publishDate}}</td>
+      </tr>
 				<tr>
 					<td>836</td>
 					<td v-if="!owner" style="width: 5%">
@@ -146,19 +153,16 @@ export default {
 		ActionCheckbox,
 		ActionRadio,
 	},
-
+  props:{
+    tasks: []
+  },
 	data() {
-	    return {
-	        show: null,
+    return {
+      show: null,
 			owner: true,
-			tasks: null,
+			//tasks: null,
 		}
 	},
-	/* data() {
-    return {
-        show: false
-    }
-  }, */
 	methods: {
 		getlist_charge: function(div) {
 		  // this.loading = !this.loading
@@ -167,6 +171,10 @@ export default {
 		changeStatus: function(status) {
 			console.log(status)
 		},
+    trashTasks(){
+
+      console.log('trashTasks')
+    }
 	},
 }
 </script>

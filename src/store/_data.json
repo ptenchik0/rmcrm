@@ -1,0 +1,45 @@
+[
+  '{{repeat(5, 7)}}',
+  {
+    id: '{{index([1])}}',
+    user: '{{firstName()}}',
+    title: '{{lorem([4], ["words"])}}',
+    description: '{{lorem([1], ["paragraphs"])}}',
+    client: [
+      '{{repeat(5, 7)}}',
+      {
+        uid: '{{random(["admin"], ["user1"], ["user2"], ["guest"], ["group1"])}}',
+        name: 'Gluhoman'
+      }
+    ],
+    amount: '{{integer([1], [5])}}',
+
+    width: '{{integer([1000], [5000])}}',
+    height: '{{integer([1000], [5000])}}',
+
+    type: '{{random(["Banner"], ["plenka"], ["Bymaga"])}}',
+    material: 'perfobanner',
+
+    provarka: '{{bool()}}',
+    laminaciya: '{{bool()}}',
+    porezka: '{{bool()}}',
+    obrezka: '{{bool()}}',
+    lyvers: '{{bool()}}',
+    luversSpace: '{{random([10], [20], [30], [40], [50])}}',
+
+    paymant: '{{random(["nal"], ["bank"])}}',
+    paymentDate: '{{date(new Date(2019, 0, 1), new Date(), "YYYY-MM-dd hh:mm:ss")}}',
+
+    filePrev: [],
+    fileWork: [],
+    fileFeedback: [],
+
+    status: '{{random(["published"], ["draft"], ["trash"])}}',
+    completed: '{{bool()}}',
+
+    createDate: '{{date(new Date(2019, 0, 1), new Date(), "YYYY-MM-dd hh:mm:ss")}}',
+    publishDate: '{{date(new Date(2019, 0, 1), new Date(), "YYYY-MM-dd hh:mm:ss")}}',
+    endDate: '{{date(new Date(2019, 0, 1), new Date(), "YYYY-MM-dd hh:mm:ss")}}',
+    completDate: '{{date(new Date(2019, 0, 1), new Date(), "YYYY-MM-dd hh:mm:ss")}}'
+  }
+]

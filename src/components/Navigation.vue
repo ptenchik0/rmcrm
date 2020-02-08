@@ -21,6 +21,8 @@
 				</AppNavigationCounter>
 			</AppNavigationItem>
 
+      <AppNavigationItem icon="icon-delete" title="Trash" :pinned="true" @click.exact="updateStatus"></AppNavigationItem>
+
 			<AppNavigationSpacer />
 
 			<AppNavigationItem icon="icon-user" title="This is a user">
@@ -87,6 +89,11 @@ export default {
 			},
 		}
 	},
+  methods:{
+      updateStatus(status) {
+          this.$emit("updateStatus", 'status');
+      },
+  },
 }
 </script>
 

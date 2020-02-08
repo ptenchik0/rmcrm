@@ -196,7 +196,7 @@
 			</fieldset>
 			<fieldset>
 				<legend>Рабочие файлы</legend>
-				<button type="button" @click="pickImage">
+				<button type="button" @click="storeData">
 					Добавить файлы
 				</button>
 			</fieldset>
@@ -401,6 +401,10 @@ export default {
 		fedit: function() {
 			console.log('dismiss-editing event')
 		},
+    storeData(){
+        this.$store.dispatch('fetchTasks')
+      console.log(this.$store.state.tasks)
+    },
 	},
 }
 </script>

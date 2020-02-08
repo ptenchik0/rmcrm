@@ -1,3 +1,9 @@
+
+@import "variables";
+@import "mixins/border-radius";
+//@import "mixins/badge";
+@import "helpers/badge";
+
 .app-sidebar-tabs__content > section{
 	position: relative;
 	padding-bottom: 61px!important;
@@ -59,6 +65,30 @@
 			color: rgba(255,255,255,.5);
 		}
 	}
+}
+
+
+
+#taskstable{
+
+}
+.published,
+.draft,
+.trash{
+	width: 5px;
+	display: inline-block;
+}
+.completed{
+	background-color: $green;
+}
+.published{
+	background-color: $blue;
+}
+.draft{
+	background-color: $gray-400;
+}
+.trash{
+	background-color: $dark;
 }
 
 /**

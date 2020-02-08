@@ -1,8 +1,8 @@
 <template>
 	<Content app-name="rmcrm" :class="{loading: loading.notes}">
-		<Navigation />
+		<Navigation @updateStatus="updateStatus" />
 
-		<router-view />
+		<router-view :tasks="tasks" />
 
 		<Sidebar :show="show" />
 	</Content>
@@ -21,7 +21,6 @@ export default {
 		Content,
 		Sidebar,
 	},
-
 	data() {
 		return {
 			loading: {
@@ -32,11 +31,27 @@ export default {
 			date2: Date.now() + 86400000 * 3 + Math.floor(Math.random() * 86400000 / 2),
 			show: true,
 			starred: false,
+      tasks: []
 		}
 	},
+  beforeMount(){
+	    this.$store.dispatch('fetchTasks');
+  },
+  mounted(){
+      this.tasks = this.$store.getters.allTasks;
+  },
 	computed: {
-
+      /*tasks(){
+          return this.$store.getters.allTasks;
+      }*/
 	},
+  methods: {
+      updateStatus(status) {
+          this.tasks = this.$store.getters.trashTasks;
+          console.log(status);
+      }
+  }
+
 	/* created() {
 		this.$router.push({ name: 'home' })
 	}, */
